@@ -93,4 +93,8 @@ class Oservicio extends CI_Controller {
                 $this->oservicio_model->set_inicio_actividad($idos);
             $this->ver($idos);
         }
+        
+        function hola(){
+            echo"Hola Gennaro";
+        }
 }

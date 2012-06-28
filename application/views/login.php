@@ -15,15 +15,15 @@ and open the template in the editor.
         <div style="width: 400px" class="ui-widget ui-widget-content ui-corner-all">
             <div class="ui-widget-header ui-corner-all ui-helper-clearfix">Login</div>
             <div class="ui-widget-content">
-                <form>
+                <form METHOD="$POST" ACTION="<?php echo base_url(); ?>index.php/usuarios-entrar">
                     <table>
                         <tr>
                             <td>User</td>
-                            <td><input type="text" /></td>
+                            <td><input type="text" name="usuario"/></td>
                         </tr>
                         <tr>
                             <td>Pass</td>
-                            <td><input type="password" /></td>
+                            <td><input type="password" name="contrasena"/></td>
                         </tr>
                         <tr>
                             <td colspan="2"><input type="submit" /></td>

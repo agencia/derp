@@ -23,7 +23,18 @@ class Portada extends CI_Controller {
 //            if(stripos($ua,'android') !== false) { // && stripos($ua,'mobile') !== false) {
 //              $this->session->set_userdata('cliente', 'mobil');
 //            }
-		$this->load->view('portada');
+                $this->load->library('session');
+                if($this->session->userdata('Id_usuario'))
+                {
+                    $this->load->view('portada');
+                }
+                else
+                {
+                    echo"Logueate primero usuario";
+                    $this->load->view('login');
+                }
+                    
+                
 	}
         
         function login(){
