@@ -56,7 +56,12 @@ class Cliente_model extends CI_Model {
         $u = $query->result_array();
         return (count($u) > 0) ? $u : false;
     }
-    
+    function get_cliente_by_id($idcliente){
+        $this->db->select("*");
+        $query = $this->db->get_where("clientes", array("idcliente" => $idcliente));
+        $u = $query->row_array();
+        return (count($u) > 0) ? $u : false;
+    }
     function update_usuario($idusuario, $campo, $valor){
         $this->db->where("idusuario", $idusuario);
         $this->db->update("usuarios", array($campo => $valor));
