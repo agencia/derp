@@ -21,10 +21,16 @@ class Clientes extends CI_Controller {
 	{
             $this->load->model("cliente_model");
             $data["clientes"] = $this->cliente_model->get_clientes();
-            $this->load->view($this->session->userdata('cliente').'/clientes/botones', $data);
+            $this->load->view('clientes/ver', $data);
 	}
         
         function login(){
 		$this->load->view($this->session->userdata('cliente').'/login');
+        }
+        
+        function ver($idcliente){
+            $this->load->model("cliente_model");
+            $data = $this->cliente_model->get_cliente_by_id($idcliente);
+            $this->load->view('clientes/ver', $data);
         }
 }
