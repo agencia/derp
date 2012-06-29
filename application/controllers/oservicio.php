@@ -19,8 +19,15 @@ class Oservicio extends CI_Controller {
 	 */
 	public function index()
 	{
+            $this->load->library('session');
             $this->load->model("oservicio_model");
-            $data["oservicios"] = $this->oservicio_model->get_oservicios();
+            if($this->session->userdata("filtro_estado") == null)
+                $data["oservicios"] = $this->oservicio_model->get_oservicios();
+            else{
+                $data["oservicios"] = $this->oservicio_model->get_oservicios_by_filtro(array("status" => $this->session->userdata("filtro_estado")));
+                $data["filtro_status"]['nombre'] = $this->oservicio_model->get_status_to_text($this->session->userdata("filtro_estado"));
+                $data["filtro_status"]['id'] = $this->session->userdata("filtro_estado");
+            }
             $this->load->view('oservicios/lista', $data);
 	}
         
@@ -96,6 +103,25 @@ class Oservicio extends CI_Controller {
         
         function filtrar(){
             $this->load->view("oservicios/lista_filtros");
+        }
+        
+        function filtrar_estado(){
+            $this->load->model("oservicio_model");
+            $data["estados"] = $this->oservicio_model->get_estados();
+            $this->load->view("oservicios/lista_filtrar_estado", $data);
+        }
+        
+        function filtrar_proyecto(){
+            $this->load->view("oservicios/lista_filtrar_proyecto");
+        }
+        
+        function filtro($tipo, $parametro){
+             $this->load->library('session');
+             if($parametro != "null")
+                $this->session->set_userdata('filtro_' . $tipo, $parametro);
+             else
+                 $this->session->unset_userdata("filtro_".$tipo);
+             header("Location: " . base_url() . "index.php/oservicio");
         }
 
 }

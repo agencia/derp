@@ -27,7 +27,14 @@
                 <a href="index.html" data-role="button">Terminados</a>
             </div>-->
             <div>
+                <?php if(isset($filtro_status)) { ?>
+                <div data-role="controlgroup" data-type="horizontal">
+                    <div data-role="button" class="ui-btn-active" data-inline="true">Filtro</div>
+                    <div data-role="button" data-inline="true"><?php echo $filtro_status["nombre"]; ?></div>
+                </div>
+                <?php } ?>
                 <ul data-role="listview" data-theme="g">
+                    <?php if($oservicios) { ?>
                     <?php foreach($oservicios as $c): ?>
                         <li><a href="<?php echo base_url() ?>index.php/oservicio/ver/<?php echo $c["idos"] ?>">
                                 <img src="<?php echo base_url() ?>img/status<?php echo $c["status"] ?>.png" class="ui-li-icon" />
@@ -38,6 +45,9 @@
                                 <span class="ui-li-count"><?php echo $c["tiempo_real"] ?>/<?php echo $c["tiempo_estimado"] ?>hrs</span>
                             </a></li>
                     <?php endforeach; ?>
+                            <?php  } else { ?>
+                            <li><em>No hay registros</em></li>
+                            <?php } ?>
                 </ul>
             </div>
         </div><!-- /content -->

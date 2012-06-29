@@ -24,6 +24,14 @@ class Oservicio_model extends CI_Model {
         $u = $query->result_array();
         return (count($u) > 0) ? $u : false;
     }
+    
+    function get_oservicios_by_filtro($data){
+        $this->db->select("*");
+        $this->db->select("FORMAT(tiempo_real, 2) tiempo_real", false);
+        $query = $this->db->get_where("oservicios", $data);
+        $u = $query->result_array();
+        return (count($u) > 0) ? $u : false;
+    }
     function get_oservicio_by_id($idos){
         $this->db->select("*");
         $this->db->select("LPAD(idos, 4, '0') os", false);
@@ -42,13 +50,7 @@ class Oservicio_model extends CI_Model {
     }
     
     function get_status_to_text($status){
-        $s = array(
-            "Propuesta",
-            "Aceptado",
-            "En desarrollo",
-            "En pruebas",
-            "Entregado"
-        );
+        $s = $this->get_estados();
         return $s[$status];
     }
     function get_estados(){

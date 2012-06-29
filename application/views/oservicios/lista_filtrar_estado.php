@@ -17,8 +17,11 @@
 
 		<div data-role="content">
                     <div data-role="controlgroup">
-                        <a href="<?php echo base_url() ?>index.php/oservicio/filtrar_estado" data-role="button">Estado</a>
-                        <a href="<?php echo base_url() ?>index.php/oservicio/filtrar_proyecto" data-role="button">Proyecto</a>
+                        <?php foreach($estados as $e =>$i): ?>
+                        <a href="<?php echo base_url() ?>index.php/oservicio/filtro/estado/<?php echo $e; ?>" data-ajax="false" data-role="button"><?php echo $i; ?></a>
+                        <?php endforeach; ?>
+                        <a href="<?php echo base_url() ?>index.php/oservicio/filtro/estado/null" data-ajax="false" data-role="button">Todos</a>
+                        <a href="<?php echo base_url() ?>index.php/oservicio/filtrar" data-role="button">Cancelar</a>
                     </div>
 		</div>
 	</div>
