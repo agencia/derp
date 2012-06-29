@@ -14,4 +14,10 @@ class Proyecto_model extends CI_Model {
         return (count($u) > 0) ? $u : false;
     }
     
+    function set($data)
+    {
+        $this->db->insert('proyectos', $data);
+        return true;
+    }
+    
 }
