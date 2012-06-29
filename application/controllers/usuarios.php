@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Clientes extends CI_Controller {
+class Usuarios extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -17,19 +17,18 @@ class Clientes extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
-	{
-            $this->load->model("cliente_model");
-            $data["clientes"] = $this->cliente_model->get_clientes();
-            $this->load->view('/clientes/botones', $data);
-	}
-        
-        function login(){
-		$this->load->view($this->session->userdata('cliente').'/login');
+	
+         function login(){
+             $this->load->library('session');
+             $this->load->model('usuario_model');
+             if($this->usuario_model->login($this->input->POST('usuario',$this->input->POST('contrasena'))))
+             {
+                 echo"Bienvenido";
+             }
+             else
+             {
+                 echo"Te has equivocado";
+             }
         }
-        
-        
-        
-       
-        
+    
 }
