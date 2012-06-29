@@ -93,11 +93,5 @@ class Oservicio extends CI_Controller {
                 $this->oservicio_model->set_inicio_actividad($idos);
             $this->ver($idos);
         }
-<<<<<<< HEAD
-        
-        function hola(){
-            echo"Hola Gennaro";
-        }
-=======
->>>>>>> branch 'master' of https://github.com/agencia/derp.git
+
 }
