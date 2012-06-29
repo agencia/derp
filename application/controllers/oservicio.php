@@ -93,5 +93,9 @@ class Oservicio extends CI_Controller {
                 $this->oservicio_model->set_inicio_actividad($idos);
             $this->ver($idos);
         }
+        
+        function filtrar(){
+            $this->load->view("oservicios/lista_filtros");
+        }
 
 }

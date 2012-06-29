@@ -23,7 +23,12 @@
             <div>
                     <table>
                         <tr>
-                            <td colspan="2"><strong><h4> <img src="<?php echo base_url() ?>img/status<?php echo $status ?>.png" class="ui-li-icon" /> <?php echo $titulo; ?></h4></strong></td>
+                            <td colspan="2"><strong><h4> 
+                            <img src="<?php echo base_url() ?>img/status<?php echo $status ?>.png" class="ui-li-icon" />
+                            <?php if($tiempo_activo != null) { ?>
+                                <img src="<?php echo base_url() ?>img/clock_12x12.png" />
+                            <?php } ?>
+                            <?php echo $titulo; ?></h4></strong></td>
                         </tr>
                         <tr valign="top">
                             <td><strong>Descripci&oacute;n:</strong></td>
@@ -47,11 +52,17 @@
                         </tr>
                         <tr valign="top">
                             <td><strong>Tiempo real:</strong></td>
-                            <td><em><?php echo $tiempo_real; ?> hrs</em></td>
+                            <td>
+                                <?php if($tiempo_activo != null) { ?>
+                                    <img src="<?php echo base_url() ?>img/clock_12x12.png" />
+                                <?php } ?>
+                                <em><?php echo $tiempo_real; ?> hrs</em>
+                            </td>
                         </tr>
                     </table>
             </div>
             <br />
+            
             <div id="bitacora">
                 <ul data-role="listview" data-theme="c">
                     <li data-role="header">Bitacora</li>

@@ -17,10 +17,8 @@
 
 		<div data-role="content">
                     <div data-role="controlgroup">
-                        <a href="<?php echo base_url() ?>index.php/oservicio/mod/<?php echo $idos ?>" data-role="button">Modificar</a>
-                        <a href="<?php echo base_url() ?>index.php/oservicio/mod_edo/<?php echo $idos ?>" data-rel="dialog" data-transition="slidedown" data-role="button">Cambiar Estado</a>
-                        <a href="<?php echo base_url() ?>index.php/oservicio/registrar_actividad/<?php echo $idos ?>"  data-ajax="false" data-role="button">Ini/Det Actividad</a>
-                        <a href="<?php echo base_url() ?>index.php/oservicio/mod_edo/<?php echo $idos ?>" data-transition="slidedown" data-role="button">Eliminar</a>
+                        <a href="<?php echo base_url() ?>index.php/oservicio/filtrar_estado" data-role="button">Estado</a>
+                        <a href="<?php echo base_url() ?>index.php/oservicio/filtrar_proyecto" data-role="button">Proyecto</a>
                     </div>
 		</div>
 	</div>
