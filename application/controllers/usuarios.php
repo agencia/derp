@@ -23,8 +23,9 @@ class Usuarios extends CI_Controller {
              $idusuario = $this->usuario_model->login($this->input->POST('usuario'),$this->input->POST('contrasena'));
              if($idusuario)
              {
-                 echo"Bienvenido";
                  $this->session->set_userdata("Id_usuario", $idusuario);
+                 echo"Bienvenido";
+                 
              }
              else
              {

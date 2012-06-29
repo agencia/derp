@@ -33,4 +33,14 @@ class Clientes extends CI_Controller {
             $data = $this->cliente_model->get_cliente_by_id($idcliente);
             $this->load->view('clientes/ver', $data);
         }
+        
+        function nuevo(){
+            $this->load->view('clientes/nuevo');
+        }
+        
+        function setnuevo(){
+            $this->load->model("cliente_model");
+            $this->cliente_model->set($this->input->post());
+            $this->index();
+        }
 }
