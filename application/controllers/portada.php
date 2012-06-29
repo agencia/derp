@@ -33,8 +33,6 @@ class Portada extends CI_Controller {
                     echo"Logueate primero usuario";
                     $this->load->view('login');
                 }
-                    
-                
 	}
         
         function login(){

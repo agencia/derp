@@ -1,4 +1,5 @@
 <?php
+class Usuario_model extends CI_Model {
 
     function __construct()
     {
@@ -32,5 +33,6 @@
         $u = $query->row_array();
         return (count($u) > 0) ? $u : false;
     }
+}
 
 ?>

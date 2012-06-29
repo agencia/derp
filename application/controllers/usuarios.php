@@ -17,6 +17,7 @@ class Usuarios extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
+<<<<<<< HEAD
 	
          function login(){
              $this->load->library('session');
@@ -31,4 +32,29 @@ class Usuarios extends CI_Controller {
              }
         }
     
+=======
+	public function index()
+	{
+            $this->load->model("usuario_model");
+            $data["usuarios"] = $this->usuario_model->get_usuarios();
+            $this->load->view('usuarios/lista', $data);
+	}
+        
+        function nuevo(){
+            $this->load->view('usuarios/nuevo');
+        }
+        
+        function setnuevo(){
+            $this->load->model("usuario_model");
+//            var_dump($_POST);
+            $this->usuario_model->set($this->input->post());
+            $this->index();
+        }
+        
+        function ver($idusuario){
+            $this->load->model("usuario_model");
+            $data = $this->usuario_model->get_usuario_by_id($idusuario);
+            $this->load->view('usuarios/ver', $data);
+        }
+>>>>>>> branch 'master' of https://github.com/agencia/derp.git
 }
