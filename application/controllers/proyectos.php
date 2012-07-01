@@ -24,5 +24,14 @@ class Proyectos extends CI_Controller {
             $this->proyecto_model->set($this->input->post());
             $this->index();
         }
+        
+        function ver($idproyecto){
+            $this->load->model("proyecto_model");
+//            $this->load->model("oservicio_model");
+            $data = $this->proyecto_model->get_proyecto_by_id($idproyecto);
+//            $data["oservicios"] = $this->oservicio_model->get_oservicios_by_idproyecto($idproyectos);
+            $data["status"] = $this->proyecto_model->get_status_to_text($data["status"]);
+            $this->load->view('proyectos/ver', $data);
+        }
     
 }

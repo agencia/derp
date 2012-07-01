@@ -23,6 +23,7 @@
 	<li><a href="<?php echo base_url(); ?>index.php/oservicio">Ordenes de Servicio</a></li>
 	<li><a href="<?php echo base_url(); ?>index.php/reportes">Reportes</a></li>
 	<li><a href="<?php echo base_url(); ?>index.php/usuarios">Usuarios</a></li>
+	<li><a href="<?php echo base_url(); ?>index.php/proyectos">Proyectos</a></li>
 </ul>
             </div><!-- /content -->
 
