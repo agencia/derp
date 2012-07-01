@@ -22,10 +22,9 @@ class Cliente_model extends CI_Model {
         return  false;
     }
     
-    function set_usuario($data)
+    function set($data)
     {
-        $this->db->set("fec_registro", "NOW()", FALSE);
-        $this->db->insert('usuarios', $data);
+        $this->db->insert('clientes', $data);
         return true;
     }
     
