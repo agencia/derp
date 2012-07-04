@@ -38,6 +38,10 @@
                             <td><strong>Status:</strong></td>
                             <td><em><?php echo $status; ?></em></td>
                         </tr>
+                        <tr valign="top">
+                            <td><strong>Requerimientos:</strong></td>
+                            <td><a href="<?php echo base_url(); ?>index.php/requerimientos/nuevo/<?php echo $idproyecto; ?>"  data-mini="true" data-role="button" data-icon="plus">Nuevo</a></td>
+                        </tr>
                    </table>
             </div>
             <br />
