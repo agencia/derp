@@ -14,33 +14,25 @@
 <div data-role="page">
 
 	<div data-role="header">
-	<a href="<?php echo base_url() ?>index.php/usuarios" data-icon="delete">atras</a>
-                <h1>Usuarios</h1>
-	<a href="<?php echo base_url() ?>index.php/usuarios/opt/<?php echo $Id_usuario ?>" data-icon="gear">Opciones</a>
+	<a href="<?php echo base_url() ?>index.php/modulos" data-icon="delete">atras</a>
+                <h1>Modulos</h1>
+	<a href="<?php echo base_url() ?>index.php/modulos/opt/<?php echo $Idmodulo ?>" data-icon="gear">Opciones</a>
 	</div><!-- /header -->
 
         <div data-role="content">
             <div>
                     <table>
                         <tr valign="top">
-                            <td><strong>Nombre;n:</strong></td>
-                            <td><em><?php echo $Nombre; ?></em></td>
+                            <td><strong>Nombre de Modulo:</strong></td>
+                            <td><em><?php echo $Nombre_Modulo; ?></em></td>
                         </tr>
                         <tr valign="top">
-                            <td><strong>Apellido_P:</strong></td>
-                            <td><em><?php echo $Apellido_P; ?></em></td>
+                            <td><strong>Descripcion:</strong></td>
+                            <td><em><?php echo $Descripcion_Modulo; ?></em></td>
                         </tr>
                         <tr valign="top">
-                            <td><strong>Apellido_M:</strong></td>
-                            <td><em><?php echo $Apellido_M; ?></em></td>
-                        </tr>
-                        <tr valign="top">
-                            <td><strong>Usuario:</strong></td>
-                            <td><em><?php echo $Usuario; ?></em></td>
-                        </tr>
-                        <tr valign="top">
-                            <td><strong>Correo:</strong></td>
-                            <td><em><?php echo $correo; ?></em></td>
+                            <td><strong>Funcionales:</strong></td><br>
+                            <td><a href="<?php echo base_url(); ?>index.php/requerimientos/nuevo/<?php echo $Idmodulo; ?>"  data-mini="true" data-role="button" data-icon="plus">Nuevo</a></td>
                         </tr>
                     </table>
             </div>

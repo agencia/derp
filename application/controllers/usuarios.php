@@ -20,7 +20,7 @@ class Usuarios extends CI_Controller {
          function login(){
              $this->load->library('session');
              $this->load->model('usuario_model');
-             $idusuario = $this->usuario_model->login($this->input->POST('usuario'),$this->input->POST('contrasena'));
+             $idusuario = $this->usuario_model->login($this->input->POST('Usuario'),$this->input->POST('Contrasena'));
              if($idusuario)
              {
                  $this->session->set_userdata("Id_usuario", $idusuario);
