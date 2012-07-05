@@ -24,6 +24,9 @@
 	<li><a href="<?php echo base_url(); ?>index.php/reportes">Reportes</a></li>
 	<li><a href="<?php echo base_url(); ?>index.php/usuarios">Usuarios</a></li>
 	<li><a href="<?php echo base_url(); ?>index.php/proyectos">Proyectos</a></li>
+        <li><a href="<?php echo base_url(); ?>index.php/usuarios/salir" data-ajax="false"">Cerrar Sesion</a></li>
+<!--        $this->session->set_userdat("idusuario",null); ?>-->
+     
 </ul>
             </div><!-- /content -->
 
