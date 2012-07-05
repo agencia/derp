@@ -15,7 +15,7 @@
 
 	<div data-role="header">
 	<a href="<?php echo base_url() ?>index.php/oservicio" data-icon="delete">atraz</a>
-		<h1>OS-<?php echo $os; ?></h1>
+		<h1>OS</h1>
 	<a href="<?php echo base_url() ?>index.php/oservicio/opt/<?php echo $idos ?>" data-icon="gear">Opciones</a>
 	</div><!-- /header -->
 

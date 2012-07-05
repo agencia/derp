@@ -14,7 +14,7 @@
 <div data-role="page">
 
 	<div data-role="header">
-	<a href="<?php echo base_url() ?>index.php/proyectos" data-icon="delete">atraz</a>
+	<a href="<?php echo base_url() ?>index.php/proyectos" data-icon="delete">atras</a>
 		<h1><?php echo $proyecto; ?></h1>
 	<a href="<?php echo base_url() ?>index.php/proyectos/opt/<?php echo $idproyecto ?>" data-icon="gear">Opciones</a>
 	</div><!-- /header -->
@@ -40,7 +40,7 @@
                         </tr>
                         <tr valign="top">
                             <td><strong>Requerimientos:</strong></td>
-                            <td><a href="<?php echo base_url(); ?>index.php/requerimientos/nuevo/<?php echo $idproyecto; ?>"  data-mini="true" data-role="button" data-icon="plus">Nuevo</a></td>
+                            <td><a href="<?php echo base_url(); ?>index.php/modulos"  data-mini="true" data-role="button" data-icon="plus">Ver</a></td>
                         </tr>
                    </table>
             </div>
