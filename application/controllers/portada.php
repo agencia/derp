@@ -24,7 +24,7 @@ class Portada extends CI_Controller {
 //              $this->session->set_userdata('cliente', 'mobil');
 //            }
                 $this->load->library('session');
-                if($this->session->userdata('Id_usuario'))
+                if($this->session->userdata('idusuario'))
                 {
                     $this->load->view('portada');
                 }
