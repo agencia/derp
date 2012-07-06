@@ -23,14 +23,21 @@ class Usuarios extends CI_Controller {
              $idusuario = $this->usuario_model->login($this->input->POST('Usuario'),$this->input->POST('Contrasena'));
              if($idusuario)
              {
-                 $this->session->set_userdata("Id_usuario", $idusuario);
-                 echo"Bienvenido";
+                 $this->session->set_userdata("idusuario", $idusuario);
+                 header('Location: '. base_url() );
+ 
              }
              else
              {
                  echo"Te has equivocado";
              }
         }
+        
+        function logout(){
+            $this->load->library('session');
+            $this->load->model('usuario_model');
+        }
+        
 	public function index()
 	{
             $this->load->model("usuario_model");
@@ -53,5 +60,10 @@ class Usuarios extends CI_Controller {
             $this->load->model("usuario_model");
             $data = $this->usuario_model->get_usuario_by_id($idusuario);
             $this->load->view('usuarios/ver', $data);
+        }
+        
+        function salir(){
+            $this->session->set_userdata("idusuario",null);
+            header('Location: '.base_url());
         }
 }

@@ -28,10 +28,10 @@ class Usuario_model extends CI_Model {
     }
     
     function login($usuario, $contrasena){
-        $this->db->select('id_usuario');
-        $query = $this->db->get_where('usuarios', array('Usuario' => $usuario, 'Contrasena' => $usuario));
+        $this->db->select('idusuario');
+        $query = $this->db->get_where('usuarios', array('usuario' => $usuario, 'contrasena' => $contrasena));
         $u = $query->row_array();
-        return (count($u) > 0) ? $u : false;
+        return (count($u) > 0) ? $u['idusuario'] : false;
     }
 }
 
