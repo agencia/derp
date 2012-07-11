@@ -14,11 +14,15 @@
 <div data-role="page">
 
 	<div data-role="header">
-	<a href="<?php echo base_url() ?>index.php/modulos" data-icon="delete">atras</a>
+	<a href="<?php echo base_url() ?>index.php/proyectos" data-icon="delete">atras</a>
                 <h1>Modulos</h1>
-	<a href="<?php echo base_url() ?>index.php/modulos/opt/<?php echo $Idmodulo ?>" data-icon="gear">Opciones</a>
-	</div><!-- /header -->
 
+	</div><!-- /header -->
+<?php if(isset($Idmodulo)== false){
+    echo "No hay modulos en este proyecto";
+}
+else{
+?>
         <div data-role="content">
             <div>
                     <table>
@@ -37,7 +41,7 @@
                     </table>
             </div>
             <br />
-        </div><!-- /content -->
+        </div><?php }?><!-- /content -->
 <div data-role="footer">
 		<h1>DERP - Designa</h1>
 	</div>

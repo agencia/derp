@@ -20,10 +20,16 @@ class Modulo_model extends CI_Model {
         $u = $query->result_array();
         return (count($u) > 0) ? $u : false;
     }
-    function get_modulo_by_id($Idmodulo){
+//    function get_modulo_by_id($Idmodulo){
+//        $this->db->select("*");
+//        $query = $this->db->get_where("modulos", array("Idmodulo" => $Idmodulo));
+//        $u = $query->row_array();
+//        return (count($u) > 0) ? $u : false;
+//    }
+    function get_modulo_by_idproyecto($idproyecto){
         $this->db->select("*");
-        $query = $this->db->get_where("modulos", array("Idmodulo" => $Idmodulo));
-        $u = $query->row_array();
+        $query = $this->db->get_where("modulos", array("idproyecto" => $idproyecto));
+        $u = $query->result_array();
         return (count($u) > 0) ? $u : false;
     }
 }
