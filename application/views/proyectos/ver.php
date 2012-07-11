@@ -40,7 +40,7 @@
                         </tr>
                         <tr valign="top">
                             <td><strong>Requerimientos:</strong></td>
-                            <td><a href="<?php echo base_url(); ?>index.php/modulos"  data-mini="true" data-role="button" data-icon="plus">Ver</a></td>
+                            <td><a href="<?php echo base_url(); ?>index.php/modulos/lista/<?php echo $idproyecto ?>"  data-mini="true" data-role="button" data-icon="plus">Ver</a></td>
                         </tr>
                    </table>
             </div>

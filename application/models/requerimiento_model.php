@@ -14,6 +14,10 @@ class Requerimiento_model extends CI_Model {
         return true;
     }
     
+    function lista_opt(){
+            $this->load->view("requerimientos/lista_opt");
+        }
+    
     function get_requerimientos(){
         $this->db->select("*");
         $query = $this->db->get("requerimientos");

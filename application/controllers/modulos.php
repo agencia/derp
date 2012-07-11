@@ -25,6 +25,12 @@ class Modulos extends CI_Controller {
             $this->load->view('modulos/lista', $data);
 	}
         
+        function lista($idproyecto){
+            $this->load->model("modulo_model");
+            $data["modulos"] = $this->modulo_model->get_modulo_by_idproyecto($idproyecto);
+            $this->load->view("modulos/lista", $data);
+        }
+        
         function nuevo(){
             $this->load->view('modulos/nuevo');
         }
@@ -36,9 +42,9 @@ class Modulos extends CI_Controller {
             $this->index();
         }
         
-        function ver($Idmodulo){
+        function ver($idproyecto){
             $this->load->model("modulo_model");
-            $data = $this->modulo_model->get_modulo_by_id($Idmodulo);
+            $data = $this->modulo_model->get_modulo_by_idproyecto($idproyecto);
             $this->load->view('modulos/ver', $data);
         }
 }
