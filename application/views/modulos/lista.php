@@ -28,11 +28,11 @@
             </div>-->
             <div>
                 <ul data-role="listview" data-theme="g">
-                    <?php foreach($modulos as $c): ?>
-                        <li><a href="<?php echo base_url() ?>index.php/modulos/ver/<?php echo $c["Idmodulo"] ?>">
+                    <?php foreach($modulos as $m): ?>
+                        <li><a href="<?php echo base_url() ?>index.php/modulos/ver/<?php echo $m["Idmodulo"] ?>">
                                 
-                        <?php echo $c["Nombre_Modulo"] ?>
-                                <span class="ui-li-count"><?php echo $c["Descripcion_Modulo"] ?></span>
+                        <?php echo $m["Nombre_Modulo"] ?>
+                                <span class="ui-li-count"><?php echo $m["Descripcion_Modulo"] ?></span>
                             </a></li>
                     <?php endforeach; ?>
                 </ul>
